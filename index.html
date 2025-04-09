@@ -4,11 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YOLOv5 Object Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+        .video-container {
+            margin: 20px auto;
+            border: 2px solid #333;
+            display: inline-block;
+            background-color: #000;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>YOLOv5 Object Detection - Webcam</h1>
-    <div>
-        <img src="{{ url_for('video_feed') }}" alt="Webcam Feed" style="width: 80%; border: 2px solid black;">
+    <p>Real-time object detection using YOLOv5 and your webcam.</p>
+    <div class="video-container">
+        <img src="{{ url_for('video_feed') }}" alt="Webcam Feed">
+    </div>
+    <button onclick="location.reload()">Restart Detection</button>
+    <div class="footer">
+        <p>Press <strong>Ctrl + R</strong> or click the button to refresh the detection.</p>
     </div>
 </body>
 </html>
